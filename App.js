@@ -17,10 +17,11 @@ import ReactNative, {
   StatusBar,
   requireNativeComponent,
   NativeModules,
-  UIManager
+  UIManager, 
+  Platform
 } from 'react-native';
 
-const DanceView = requireNativeComponent("DanceView")
+const DanceView = Platform.OS === 'ios' ? requireNativeComponent("DanceView") : null
 
 
 const App = () => {
@@ -44,8 +45,11 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
 
-
-      <DanceView ref={(component) => setMyCVInstance(component)} style={styles.wrapper} />
+      { 
+        Platform.OS === 'ios' ? 
+        <DanceView ref={(component) => setMyCVInstance(component)} style={styles.wrapper} />
+        : <></>
+      } 
 
       <View style={{ padding: 32, flexDirection: 'row' }}>
 
