@@ -34,20 +34,8 @@ target 'DancingAR' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'DancingARTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+  pod 'Alamofire', '~> 4.0'
 
   use_native_modules!
 end
 
-target 'DancingAR-tvOS' do
-  # Pods for DancingAR-tvOS
-
-  target 'DancingAR-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-end

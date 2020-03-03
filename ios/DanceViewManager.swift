@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 import ARKit
 import SceneKit
+import Alamofire
 
 @objc(DanceViewManager)
 class DanceViewManager: RCTViewManager, ARSCNViewDelegate {
@@ -15,6 +16,13 @@ class DanceViewManager: RCTViewManager, ARSCNViewDelegate {
   }
   
   override func view() -> UIView! {
+    
+    let parameters = ["email":"hitzu@enigmo.mx", "password":"123456"]
+    Alamofire.request("http://192.168.0.6:3010/logIn", method: .post, parameters: parameters).responseJSON {
+      response in
+      print(response)
+    }
+    
     self.arView = ARSCNView()
     let configuration = ARWorldTrackingConfiguration()
     configuration.planeDetection = .horizontal

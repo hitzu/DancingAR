@@ -52,19 +52,19 @@ const App = () => {
         <TouchableOpacity
           style={[styles.wrapper, styles.border]}
           onPress={() => { addBox(0) }}>
-          <Text style={styles.buttonText}>Samba</Text>
+          <Text style={styles.buttonText}>Miguel</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={[styles.wrapper, styles.border]}
           onPress={() => { addBox(1) }}>
-          <Text style={styles.buttonText}>Hip-Hop</Text>
+          <Text style={styles.buttonText}>Es</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={[styles.wrapper, styles.border]}
           onPress={() => { addBox(2) }}>
-          <Text style={styles.buttonText}>Salsa</Text>
+          <Text style={styles.buttonText}>Puto</Text>
         </TouchableOpacity>
 
       </View>
